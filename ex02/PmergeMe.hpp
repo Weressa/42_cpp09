@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/18 20:19:42 by assabich          #+#    #+#             */
-/*   Updated: 2026/05/18 20:20:14 by assabich         ###   ########.fr       */
+/*   Created: 2026/05/18 20:19:13 by assabich          #+#    #+#             */
+/*   Updated: 2026/05/18 20:19:33 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PmergeMe.hpp"
+#ifndef PmergeMe_HPP
+#define PmergeMe_HPP
 
-int main(int ac, char** av)
-{
-    return (0);
-}
+
+
+#endif
