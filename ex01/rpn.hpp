@@ -6,7 +6,7 @@
 /*   By: assewer <assewer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 18:16:09 by assabich          #+#    #+#             */
-/*   Updated: 2026/05/14 19:48:11 by assewer          ###   ########.fr       */
+/*   Updated: 2026/05/17 16:44:17 by assewer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class   RPN
         RPN &operator=(const RPN &other);
         
         void    calculator(const std::string &expression);
-    
+        void    calculate(char op);
+
     private:
     std::stack<int>     _stack;
 };
