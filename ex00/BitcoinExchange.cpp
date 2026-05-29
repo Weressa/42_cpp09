@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 18:04:09 by assabich          #+#    #+#             */
-/*   Updated: 2026/04/06 17:31:04 by assabich         ###   ########.fr       */
+/*   Updated: 2026/05/29 15:51:36 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,24 @@ double get_value(std::string &line)
 {
     
 }
+
+void BitcoinExchange::check_file(std::ifstream &file) 
+{
+    std::string line;
+    if (getline(data, line) != "date | value")
+    {
+        std::cerr << "Error: wrong header." << 
+        return;
+    }
+
+    while (getline(data, line))
+    {
+        
+    }
+}
+
+
+
 
 void BitcoinExchange::fill_db(std::ifstream &data) 
 {
