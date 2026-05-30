@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 18:08:13 by assabich          #+#    #+#             */
-/*   Updated: 2026/04/06 17:31:11 by assabich         ###   ########.fr       */
+/*   Updated: 2026/05/31 00:59:27 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <iomanip>
+#include <sstream>
 
 class BitcoinExchange
 {
@@ -26,12 +28,15 @@ class BitcoinExchange
     BitcoinExchange(const BitcoinExchange &copy);
     
     BitcoinExchange &operator=(const BitcoinExchange &copy);
-    void            fill_db(std::ifstream &data);
-    std::string     get_key(std::string &line);
-    int             get_value(std::string &line);
+    
+    void    fill_db(std::ifstream &data);
+    void    handle_input(std::ifstream &file);
+    void    check_date(const std::string& date); 
+    void    check_value(float value);
+    float   get_exchange(std::string &date);
 
     private:
-    std::map<std::string, double> _db;
+    std::map<std::string, float> _db;
 };
 
 #endif
