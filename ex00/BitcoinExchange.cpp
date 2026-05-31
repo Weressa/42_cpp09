@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 18:04:09 by assabich          #+#    #+#             */
-/*   Updated: 2026/05/31 00:58:19 by assabich         ###   ########.fr       */
+/*   Updated: 2026/05/31 02:57:36 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void BitcoinExchange::fill_db(std::ifstream &data)
         getline(linef, StrExRate);
         
         std::istringstream  Rate(StrExRate);
-        Rate >> ExchangeRate;
-        check_date(date);
+        if (!(Rate >> ExchangeRate))
+            throw std::invalid_argument("Invalid exchange rate");        check_date(date);
         _db[date] = ExchangeRate;
     }
 }
@@ -71,11 +71,14 @@ void BitcoinExchange::handle_input(std::ifstream &file)
         
         std::istringstream linef(line);
         
-        getline(linef, date, ' ');
-        check_date(date);
-        getline(linef, pipe, ' ');
-        getline(linef, str_value);
-        
+        std::string date, pipe, str_value;
+        if (!(linef >> date >> pipe >> str_value))
+            throw std::invalid_argument("Error: bad input => " + line);
+
+        if (pipe != "|")
+            throw std::invalid_argument("Error: bad input => " + line);
+
+        check_date(date);        
         std::istringstream  ssvalue(str_value);
         ssvalue >> value;
         check_value(value);
@@ -154,7 +157,7 @@ void BitcoinExchange::check_value(float value)
         throw (std::runtime_error("Error: Invalid value: number too large"));
 }
 
-float BitcoinExchange::get_exchange(std::string &date)
+float BitcoinExchange::get_exchange(const std::string &date)
 {
     std::map<std::string, float>::iterator i;
     

@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 18:08:13 by assabich          #+#    #+#             */
-/*   Updated: 2026/05/31 00:59:27 by assabich         ###   ########.fr       */
+/*   Updated: 2026/05/31 02:46:57 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class BitcoinExchange
     void    handle_input(std::ifstream &file);
     void    check_date(const std::string& date); 
     void    check_value(float value);
-    float   get_exchange(std::string &date);
+    float   get_exchange(const std::string &date);
 
     private:
     std::map<std::string, float> _db;
