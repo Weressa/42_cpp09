@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: assewer <assewer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 18:14:50 by assabich          #+#    #+#             */
-/*   Updated: 2026/05/14 19:39:40 by assewer          ###   ########.fr       */
+/*   Updated: 2026/05/31 03:44:41 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,14 @@ int main(int ac, char** av)
         return(1);
     }
     std::string expression = av[1];
+    try
+    {
+        RPN calculator(expression);
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+        return (1);
+    }
     return (0);
 }

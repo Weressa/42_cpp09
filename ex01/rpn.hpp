@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rpn.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: assewer <assewer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 18:16:09 by assabich          #+#    #+#             */
-/*   Updated: 2026/05/17 16:44:17 by assewer          ###   ########.fr       */
+/*   Updated: 2026/05/31 03:38:50 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <stdexcept>
+#include <cctype>
 
 class   RPN
 {
