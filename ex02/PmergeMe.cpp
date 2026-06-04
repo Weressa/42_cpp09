@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 20:18:54 by assabich          #+#    #+#             */
-/*   Updated: 2026/06/03 21:11:00 by assabich         ###   ########.fr       */
+/*   Updated: 2026/06/04 20:59:43 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,45 +40,29 @@ PmergeMe    &PmergeMe::operator=(const PmergeMe &copy)
     return (*this);
 }
 
+void    PmergeMe::jacob()
+{
+    deq = sort(deq);
+    vec = sort(vec);
+
+}
+
 void    PmergeMe::print_before()
 {
     std::cout << "Before: ";
     for (std::vector<int>::const_iterator i = vec.begin(); i != vec.end(); ++i)
         std::cout << *i << ' '; 
+    std::cout << std::endl;
     //PS: check how to remove the last ' '
 
 }
 
-void    PmergeMe::sort(T &data)
+void    PmergeMe::print_after()
 {
-    std::T<Pair> pairs;
-
-    int strag = -1;
-    for (int i = 0; i + 1 < data.size(); i+= 2)
-    {
-        Pair p;
-        if (data[i] > data[i + 1])
-        {
-            p.big = data[i];
-            p.small = data[i + 1];
-        }
-        else
-        {
-            p.big = data[i + 1];
-            p.small = data[i];
-        }
-        pairs.push_back(p);
-    }
-
-    if (data.size() % 2)
-        strag = data.back();
-    
-    T   bigs;
-    
-    for (int i = 0; i < pairs.size(); i++)
-        bigs.push_back(pairs[i].big);
-
-    std::T<int> mainchain;
+    std::cout << "After: ";
+    for (std::vector<int>::const_iterator i = vec.begin(); i != vec.end(); ++i)
+        std::cout << *i << ' '; 
+    std::cout << std::endl;
+    //PS: check how to remove the last ' '
 
 }
-
