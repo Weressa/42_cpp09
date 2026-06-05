@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 20:19:13 by assabich          #+#    #+#             */
-/*   Updated: 2026/06/04 21:07:57 by assabich         ###   ########.fr       */
+/*   Updated: 2026/06/05 19:14:22 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <deque>
 #include <climits>
 #include <cstdlib>
+#include <algorithm>
+#include <ctime>
 
 struct Pair
 {
@@ -130,8 +132,6 @@ T    sort(T &data)
     return (main);
 }
 
-
-
 class PmergeMe
 {
     public:
@@ -141,7 +141,7 @@ class PmergeMe
     PmergeMe &operator=(const PmergeMe &copy);
     
     void    print_before();
-    void    print_after();
+    void    print_after(double t_vec, double t_deq);
     void    jacob();
     
     private:

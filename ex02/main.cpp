@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 20:19:42 by assabich          #+#    #+#             */
-/*   Updated: 2026/06/04 20:57:36 by assabich         ###   ########.fr       */
+/*   Updated: 2026/06/05 17:48:00 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main(int ac, char** av)
         PmergeMe    merge(ac, av);        
         merge.print_before();
         merge.jacob();
-        merge.print_after();
     }
     catch (const std::exception &e)
     {
