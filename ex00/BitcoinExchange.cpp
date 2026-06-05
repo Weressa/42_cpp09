@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 18:04:09 by assabich          #+#    #+#             */
-/*   Updated: 2026/05/31 02:57:36 by assabich         ###   ########.fr       */
+/*   Updated: 2026/06/05 20:09:48 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ void BitcoinExchange::fill_db(std::ifstream &data)
         
         std::istringstream  Rate(StrExRate);
         if (!(Rate >> ExchangeRate))
-            throw std::invalid_argument("Invalid exchange rate");        check_date(date);
+            throw (std::invalid_argument("Invalid exchange rate")); 
+        check_date(date);
         _db[date] = ExchangeRate;
     }
 }
@@ -71,7 +72,6 @@ void BitcoinExchange::handle_input(std::ifstream &file)
         
         std::istringstream linef(line);
         
-        std::string date, pipe, str_value;
         if (!(linef >> date >> pipe >> str_value))
             throw std::invalid_argument("Error: bad input => " + line);
 

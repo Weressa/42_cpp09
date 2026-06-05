@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 14:57:37 by assabich          #+#    #+#             */
-/*   Updated: 2026/05/31 03:46:20 by assabich         ###   ########.fr       */
+/*   Updated: 2026/06/05 19:58:31 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ RPN::RPN(const std::string &expression)
 void    RPN::calculate(char op)
 {
     if (_stack.size() < 2)
-        throw std::runtime_error("Error: not enough operands");
+        throw std::runtime_error("Error: invalid equation");
     
     int first = _stack.top();
     _stack.pop();

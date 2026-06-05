@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 18:14:50 by assabich          #+#    #+#             */
-/*   Updated: 2026/05/31 03:44:41 by assabich         ###   ########.fr       */
+/*   Updated: 2026/06/05 20:01:33 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int ac, char** av)
 {
     if (ac != 2)
     {
-        std::cerr << "Error: Format must be: ./RPN \"expression\"" << std::endl;
+        std::cerr << "Error: Format must be: ./RPN \"equation\"" << std::endl;
         return(1);
     }
     std::string expression = av[1];
