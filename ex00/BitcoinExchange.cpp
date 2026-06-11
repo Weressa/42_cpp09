@@ -6,7 +6,7 @@
 /*   By: assabich <assabich@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 18:04:09 by assabich          #+#    #+#             */
-/*   Updated: 2026/06/05 20:09:48 by assabich         ###   ########.fr       */
+/*   Updated: 2026/06/10 20:26:39 by assabich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,27 +63,33 @@ void BitcoinExchange::handle_input(std::ifstream &file)
     getline(file, line);
     if (line != "date | value")
         throw (std::invalid_argument("Error: wrong header." ));
-
     while (getline(file, line))
     {
-        std::string date, pipe;
-        std::string str_value;
-        float value;
-        
-        std::istringstream linef(line);
-        
-        if (!(linef >> date >> pipe >> str_value))
-            throw std::invalid_argument("Error: bad input => " + line);
-
-        if (pipe != "|")
-            throw std::invalid_argument("Error: bad input => " + line);
-
-        check_date(date);        
-        std::istringstream  ssvalue(str_value);
-        ssvalue >> value;
-        check_value(value);
-        float result = value * get_exchange(date);
-        std::cout << date << " => " << value << " = " << result << std::endl;
+        try
+        {
+            std::string date, pipe;
+            std::string str_value;
+            float value;
+            
+            std::istringstream linef(line);
+            
+            if (!(linef >> date >> pipe >> str_value))
+                throw std::invalid_argument("Error: bad input => " + line);
+    
+            if (pipe != "|")
+                throw std::invalid_argument("Error: bad input => " + line);
+    
+            check_date(date);        
+            std::istringstream  ssvalue(str_value);
+            ssvalue >> value;
+            check_value(value);
+            float result = value * get_exchange(date);
+            std::cout << date << " => " << value << " = " << result << std::endl;
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << std::endl;
+        }
     }
 }
 
